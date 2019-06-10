@@ -12,15 +12,19 @@ from bs4 import BeautifulSoup
 
 
 
-def set_data():
+def set_data(hoje='s'):
     
     """"
     Esta função trás a data que vai ser consultada
     Lembrando que o site da AMBIMA trás os valores somente para os últimos 5 dias úteis
-    O formato da data tem que ser em ddmmmaaaa (ex: 01jan2015)
+    Caso nao queria o dia de hoje mudar no código
+    O formato da data tem que ser em ddmmmaaaa (ex: 01jan2015)    
     """
-    
-    data=input('Insira o data a ser consultada: ')
+    if hoje=='s':
+	data=ts.hoje - 1 	#Verificar como deixar a data no formato certo
+	
+    else:
+    	data=input('Insira o data a ser consultada: ')
     
     return data
 
